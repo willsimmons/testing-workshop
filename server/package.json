@@ -9,7 +9,9 @@
     "build": "babel --ignore __tests__,__mocks__ --out-dir dist src",
     "test": "cd .. && npm run test:server --silent",
     "now-build": "echo \"build happens before deploy\"",
-    "now-start": "node ."
+    "now-start": "node .",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
   "license": "MIT",
@@ -27,7 +29,8 @@
     "loglevel": "^1.6.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "til-shared": "file:../shared"
+    "til-shared": "file:../shared",
+    "snyk": "^1.189.0"
   },
   "now": {
     "name": "til",
@@ -55,5 +58,6 @@
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
     "nodemon": "^1.17.3"
-  }
+  },
+  "snyk": true
 }
